@@ -1,3 +1,5 @@
+import fs from "node:fs/promises";
+
 /**
  * @typedef {string[]} Song
  */
@@ -36,4 +38,12 @@ export const songs = {
  */
 export function getFilenames(artist, songs) {
 	return songs.map((song) => `${artist} - ${song}`);
+}
+
+/**
+ * Creates a file if it doesn't exist
+ * @param {string} filename
+ */
+export async function createFile(filename) {
+	await fs.writeFile(`gen/${filename}.mp3`, "", { flag: "w" });
 }
