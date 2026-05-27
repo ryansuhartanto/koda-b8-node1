@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 
-import { getFilenames, songs } from "./utils.js";
+import { createFile, getFilenames, songs } from "./utils.js";
 
 describe("songs", () => {
 	it("has 3 artists", () => {
@@ -20,5 +20,13 @@ describe("getFilenames", () => {
 
 	it("returns array of strings", () => {
 		assert.equal(typeof getFilenames("", [""])[0], "string");
+	});
+});
+
+describe("createFile", () => {
+	it("creates file", () => {
+		assert.doesNotThrow(async () => {
+			await createFile("PinocchioP - SLoWMoTIoN feat. Hatsune Miku");
+		});
 	});
 });
