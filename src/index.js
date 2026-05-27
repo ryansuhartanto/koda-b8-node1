@@ -1,9 +1,10 @@
 import fs from "node:fs/promises";
 
 import { songs } from "./util.js";
+import { getFilenames } from "./utils.js";
 
 const data = Object.entries(songs).flatMap(([artist, songs]) => {
-	return songs.map((song) => `${artist} - ${song}`);
+	return getFilenames(artist, songs);
 });
 
 data.forEach(async (song) => {

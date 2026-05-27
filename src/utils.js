@@ -28,3 +28,12 @@ export const songs = {
 		"Lollipop feat. 初音ミク",
 	],
 };
+
+/**
+ * Get the filenames of artist and its songs
+ * @param {string} artist
+ * @param {Song} songs
+ */
+export function getFilenames(artist, songs) {
+	return songs.map((song) => `${artist} - ${song}`);
+}
