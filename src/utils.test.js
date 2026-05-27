@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 
-import { songs } from "./utils.js";
+import { getFilenames, songs } from "./utils.js";
 
 describe("songs", () => {
 	it("has 3 artists", () => {
@@ -9,5 +9,16 @@ describe("songs", () => {
 	});
 	it("has 15 songs combined", () => {
 		assert.equal(Object.values(songs).flat().length, 15);
+	});
+});
+
+describe("getFilenames", () => {
+	it("returns array", () => {
+		assert.equal(typeof getFilenames("", []), "object");
+		assert(Array.isArray(getFilenames("", [])));
+	});
+
+	it("returns array of strings", () => {
+		assert.equal(typeof getFilenames("", [""])[0], "string");
 	});
 });
