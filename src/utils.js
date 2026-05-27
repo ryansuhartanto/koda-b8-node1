@@ -1,3 +1,10 @@
+/**
+ * @typedef {string[]} Song
+ */
+
+/**
+ * @type {Object<string, Song>} A collection of artist and its songs
+ */
 export const songs = {
 	PinocchioP: [
 		"SLoWMoTIoN feat. Hatsune Miku",
